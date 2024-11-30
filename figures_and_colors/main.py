@@ -8,7 +8,6 @@ import numpy as np
 image = plt.imread('balls_and_rects.png')
 binary = image.mean(2)
 binary[binary > 0] = 1
-binary = binary[0:400, 0:400]
 
 labeled = label(binary)
 regions = regionprops(labeled)
@@ -54,7 +53,3 @@ for color, figures in figures_colors.items():
     print(f"Оттенок hsv: {color}:")
     print(figures)
     print()
-
-plt.figure()
-plt.imshow(image[0:400, 0:400])
-plt.show()
