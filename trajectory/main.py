@@ -11,6 +11,8 @@ def get_distance(point1, point2):
 directory = "./out/"
 files = os.listdir(directory)
 
+files = sorted(files, key=lambda x: int(x.split('_')[1].split('.')[0]))
+
 trajectory = []
 for i, file in enumerate(files):
     image = np.load(directory + file)
